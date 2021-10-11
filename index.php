@@ -72,7 +72,7 @@ if( !$title ) { $title = clean_title(basename(dirname(__FILE__))); }
 	<style>
 		*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 		body { background: #dadada; font-family: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 400; font-size: 14px; line-height: 18px; padding: 0; margin: 0; text-align: center;}
-		.wrap { max-width: 100%; width: 70%; margin: 20px auto; background: white; padding: 40px; border-radius: 3px; text-align: left;}
+		.wrap { max-width: 100%; width: 75%; margin: 20px auto; background: white; padding: 40px; border-radius: 3px; text-align: left;}
 		@media only screen and (max-width: 700px) { .wrap { padding: 15px; } }
 		h1 { text-align: center; margin: 40px 0; font-size: 22px; font-weight: bold; color: #666; }
 		a { color: #399ae5; text-decoration: none; } a:hover { color: #206ba4; text-decoration: none; }
