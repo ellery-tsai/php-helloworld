@@ -72,7 +72,7 @@ if( !$title ) { $title = clean_title(basename(dirname(__FILE__))); }
 	<style>
 		*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 		body { background: #dadada; font-family: "Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 400; font-size: 14px; line-height: 18px; padding: 0; margin: 0; text-align: center;}
-		.wrap { max-width: 100%; width: 500px; margin: 20px auto; background: white; padding: 40px; border-radius: 3px; text-align: left;}
+		.wrap { max-width: 100%; width: 70%; margin: 20px auto; background: white; padding: 40px; border-radius: 3px; text-align: left;}
 		@media only screen and (max-width: 700px) { .wrap { padding: 15px; } }
 		h1 { text-align: center; margin: 40px 0; font-size: 22px; font-weight: bold; color: #666; }
 		a { color: #399ae5; text-decoration: none; } a:hover { color: #206ba4; text-decoration: none; }
@@ -139,7 +139,7 @@ function ext($filename)
 
 function display_size($bytes, $precision = 2) 
 {
-	$units = array('B', 'KB', 'MB', 'GB', 'TB');
+    $units = array('B', 'KB', 'MB', 'GB', 'TB');
     $bytes = max($bytes, 0); 
     $pow = floor(($bytes ? log($bytes) : 0) / log(1024)); 
     $pow = min($pow, count($units) - 1); 
@@ -182,7 +182,14 @@ function display_block( $file )
 	$download_att = ($force_download AND $file_ext != "dir" ) ? " download='" . basename($file) . "'" : "";
 	
 	$rtn = "<div class=\"block\">";
-	$rtn .= "<a href=\"$file\" class=\"$file_ext\"{$download_att}>";
+	if ($file_ext === "bzip2")
+	{
+	    $rtn .= "<a href=\"show.php?file=$file\" class=\"$file_ext\">";
+	}
+	else
+	{
+	    $rtn .= "<a href=\"$file\" class=\"$file_ext\"{$download_att}>";
+	}
 	$rtn .= "	<div class=\"img $file_ext\"></div>";
 	$rtn .= "	<div class=\"name\">";
 	
