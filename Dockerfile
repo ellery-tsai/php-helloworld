@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi:8.1
 
 RUN yum --disableplugin=subscription-manager -y module enable php:7.3 \
-  && yum --disableplugin=subscription-manager -y install httpd php \
+  && yum --disableplugin=subscription-manager -y install httpd php openscap-scanner \
   && yum --disableplugin=subscription-manager clean all
 
 RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
