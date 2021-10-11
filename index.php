@@ -30,7 +30,7 @@ SOFTWARE.
 *** OPTIONS ***/
 
 	// TITLE OF PAGE
-	$title = "List of Files";
+	$title = "Compliance Scan reports";
 	
 	// STYLING (light or dark)
 	$color	= "light";
