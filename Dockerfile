@@ -13,6 +13,7 @@ RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
   && chmod -R g=u /var/log/httpd /var/run/httpd /run/php-fpm
 
 ADD index.html /var/www/html
+ADD index.php /var/www/html/test.php
 
 EXPOSE 8080
 USER 1001
