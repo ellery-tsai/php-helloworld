@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi8/ubi:8.5
+FROM registry.access.redhat.com/ubi8/ubi:8.6
 
 RUN yum --disableplugin=subscription-manager -y module enable php:7.3 \
   && yum --disableplugin=subscription-manager -y install httpd php openscap-scanner \
